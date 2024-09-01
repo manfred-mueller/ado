@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ExecuteAProcessOnTheCommandLineElevatedViaUAC" xml:space="preserve">
+    <value>Ausführen eines Prozesses auf der Kommandozeile mit erweiterten Zugriffsrechten über UAC</value>
+  </data>
+  <data name="UsageAdoWaitKProgArgs" xml:space="preserve">
+    <value>Verwendung: ado [-?|-wait|-k] prog [args]</value>
+  </data>
+  <data name="ShowsThisHelp" xml:space="preserve">
+    <value>- Zeigt diese Hilfe</value>
+  </data>
+  <data name="WaitWaitsUntilProgTerminates" xml:space="preserve">
+    <value>- Wartet, bis prog beendet ist</value>
+  </data>
+  <data name="KStartsTheTheCOMSPECEnvironmentVariableValueAnd" xml:space="preserve">
+    <value>- Startet den Wert der Umgebungsvariablen %COMSPEC% und</value>
+  </data>
+  <data name="ExecutesProgInItCMDEXEEtc" xml:space="preserve">
+    <value>  führt das darin enthaltene Programm aus (CMD.EXE, usw.)</value>
+  </data>
+  <data name="ProgTheProgramToExecute" xml:space="preserve">
+    <value>- Das auszuführende Programm</value>
+  </data>
+  <data name="ArgsOptionalCommandLineArgumentsToProg" xml:space="preserve">
+    <value>- Optionale Befehlszeilenargumente für prog</value>
+  </data>
+  <data name="COMSPECIsNotDefined" xml:space="preserve">
+    <value>%COMSPEC% ist nicht definiert</value>
+  </data>
+  <data name="CreatingCommandLineFailed" xml:space="preserve">
+    <value>Erstellen der Befehlszeile fehlgeschlagen</value>
+  </data>
+  <data name="UnrecognizedFlag0" xml:space="preserve">
+    <value>Unerkanntes Flag {0}</value>
+  </data>
+  <data name="CommandLineTooLong" xml:space="preserve">
+    <value>Befehlszeile zu lang</value>
+  </data>
+  <data name="InvalidArguments" xml:space="preserve">
+    <value>Ungültige Argumente</value>
+  </data>
+  <data name="_0CouldNotBeLaunched1" xml:space="preserve">
+    <value>{0} konnte nicht gestartet werden: {1}</value>
+  </data>
+  <data name="ProgramInstalledSuccessfully" xml:space="preserve">
+    <value>Das Programm wurde erfolgreich installiert.</value>
+  </data>
+  <data name="InstallationFailed" xml:space="preserve">
+    <value>Die Installation ist fehlgeschlagen: </value>
+  </data>
+  <data name="ProgramUninstalledSuccessfully" xml:space="preserve">
+    <value>Das Programm wurde erfolgreich deinstalliert.</value>
+  </data>
+  <data name="UninstallationFailed" xml:space="preserve">
+    <value>Die Deinstallation ist fehlgeschlagen: </value>
+  </data>
+  <data name="RemovedFromPATH" xml:space="preserve">
+    <value>Entfernt von PATH: </value>
+  </data>
+  <data name="AddedToPATH" xml:space="preserve">
+    <value>Zu PATH hinzugefügt: </value>
+  </data>
+  <data name="InstallsTheProgramToCurrentUserSProgramFilesAnd" xml:space="preserve">
+    <value>- Installiert das Programm in die Programmdateien des aktuellen Benutzers und</value>
+  </data>
+  <data name="AddsItToTheUserSPATHVariable" xml:space="preserve">
+    <value>  fügt es der PATH-Variable des Benutzers hinzu.</value>
+  </data>
+  <data name="UninstallsTheProgramFromCurrentUserSProgramFilesAnd" xml:space="preserve">
+    <value>- Deinstalliert das Programm aus den Programmdateien des aktuellen Benutzers und</value>
+  </data>
+  <data name="RemovesItFromTheUserSPATHVariable" xml:space="preserve">
+    <value>  entfernt es aus der PATH-Variable des Benutzers.</value>
+  </data>
+</root>
