@@ -58,6 +58,11 @@ jobs:
           cat README.md >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
+      - name: Capture commit message
+        id: capture_commit_message
+        if: github.event_name == 'push'
+        run: echo "COMMIT_MESSAGE=$(git log -1 --pretty=%B)" >> $GITHUB_ENV
+
       - name: Create release
         id: create_release
         uses: actions/create-release@v1
@@ -68,12 +73,13 @@ jobs:
           prerelease: false
           body: |
             ## Changelog
-            - Automatic release for version ${{ env.VERSION }}
+            ${{ github.event_name == 'push' && env.COMMIT_MESSAGE || 'Automatic release for version ${{ env.VERSION }}' }}
 
             ## README
             ${{ env.README_CONTENT }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Upload <reponame>.exe
         uses: actions/upload-release-asset@v1
         with:
