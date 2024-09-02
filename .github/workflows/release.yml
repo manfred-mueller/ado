@@ -25,7 +25,7 @@ jobs:
       - name: Find setup file and extract version
         id: get_version
         run: |
-          SETUP_FILE=$(ls ./bin/Release/${{ env.REPO_NAME }}_setup-*.exe | head -n 1)
+          SETUP_FILE=$(ls ./bin/Release/${{ env.REPO_NAME }}_setup-*.exe | tail -n 1)
           if [ -z "$SETUP_FILE" ]; then
             echo "Setup file not found!"
             exit 1
@@ -34,6 +34,21 @@ jobs:
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "Setup file is: $SETUP_FILE"
           echo "Version extracted: $VERSION"
+
+      - name: Delete existing tag
+        run: |
+          git tag -d ${{ env.VERSION }} || true
+          git push --delete origin ${{ env.VERSION }} || true
+        env:
+          VERSION: ${{ env.VERSION }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Delete existing release
+        run: |
+          gh release delete ${{ env.VERSION }} -y || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ env.VERSION }}
 
       - name: Create release
         id: create_release
@@ -56,6 +71,8 @@ jobs:
           asset_path: ./bin/Release/${{ env.REPO_NAME }}.exe
           asset_name: ${{ env.REPO_NAME }}.exe
           asset_content_type: application/octet-stream
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload <reponame>_setup-<version>.exe
         uses: actions/upload-release-asset@v1
@@ -64,3 +81,5 @@ jobs:
           asset_path: ./bin/Release/${{ env.REPO_NAME }}_setup-${{ env.VERSION }}.exe
           asset_name: ${{ env.REPO_NAME }}_setup-${{ env.VERSION }}.exe
           asset_content_type: application/octet-stream
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
