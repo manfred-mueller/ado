@@ -1,10 +1,10 @@
-name: Create Release on Push
+name: Create Release on Push or Manual Trigger
 
 on:
-  workflow_dispatch:
   push:
     branches:
-      - main
+      - master
+  workflow_dispatch:
 
 env:
   REPO_NAME: ${{ github.event.repository.name }}
@@ -29,6 +29,25 @@ jobs:
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "Setup file is: $SETUP_FILE"
           echo "Version extracted: $VERSION"
+
+      - name: Check for existing release
+        id: check_release
+        run: |
+          EXISTING_RELEASE=$(gh release view ${{ env.VERSION }} --json id --jq '.id' || echo "none")
+          if [ "$EXISTING_RELEASE" != "none" ]; then
+            echo "Release with tag ${{ env.VERSION }} already exists."
+            echo "RELEASE_EXISTS=true" >> $GITHUB_ENV
+          else
+            echo "RELEASE_EXISTS=false" >> $GITHUB_ENV
+
+      - name: Delete existing release and tag if it exists
+        if: env.RELEASE_EXISTS == 'true'
+        run: |
+          echo "Deleting existing release..."
+          gh release delete ${{ env.VERSION }} --yes
+          echo "Deleting existing tag..."
+          git tag -d ${{ env.VERSION }}
+          git push origin --delete ${{ env.VERSION }}
 
       - name: Create release
         id: create_release
