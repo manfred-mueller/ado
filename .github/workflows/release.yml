@@ -17,6 +17,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Set up GitHub CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gh
+
       - name: Find setup file and extract version
         id: get_version
         run: |
@@ -32,6 +37,8 @@ jobs:
 
       - name: Check for existing release
         id: check_release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           EXISTING_RELEASE=$(gh release view ${{ env.VERSION }} --json id --jq '.id' || echo "none")
           if [ "$EXISTING_RELEASE" != "none" ]; then
@@ -42,6 +49,8 @@ jobs:
 
       - name: Delete existing release and tag if it exists
         if: env.RELEASE_EXISTS == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "Deleting existing release..."
           gh release delete ${{ env.VERSION }} --yes
