@@ -56,6 +56,8 @@ jobs:
           asset_path: ./bin/Release/${{ env.REPO_NAME }}.exe
           asset_name: ${{ env.REPO_NAME }}.exe
           asset_content_type: application/octet-stream
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload <reponame>_setup-<version>.exe
         uses: actions/upload-release-asset@v1
@@ -64,3 +66,5 @@ jobs:
           asset_path: ./bin/Release/${{ env.REPO_NAME }}_setup-${{ env.VERSION }}.exe
           asset_name: ${{ env.REPO_NAME }}_setup-${{ env.VERSION }}.exe
           asset_content_type: application/octet-stream
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
