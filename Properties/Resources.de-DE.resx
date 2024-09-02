@@ -187,6 +187,6 @@
     <value>- Deinstalliert das Programm aus den Programmdateien des aktuellen Benutzers und</value>
   </data>
   <data name="RemovesItFromTheUserSPATHVariable" xml:space="preserve">
-    <value>  entfernt es aus der PATH-Variable des Benutzers.</value>
+    <value>  entfernt es von der PATH-Variable des Benutzers.</value>
   </data>
 </root>
