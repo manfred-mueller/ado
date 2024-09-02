@@ -35,6 +35,21 @@ jobs:
           echo "Setup file is: $SETUP_FILE"
           echo "Version extracted: $VERSION"
 
+      - name: Delete existing tag
+        run: |
+          git tag -d ${{ env.VERSION }} || true
+          git push --delete origin ${{ env.VERSION }} || true
+        env:
+          VERSION: ${{ env.VERSION }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Delete existing release
+        run: |
+          gh release delete ${{ env.VERSION }} -y || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ env.VERSION }}
+
       - name: Create release
         id: create_release
         uses: actions/create-release@v1
