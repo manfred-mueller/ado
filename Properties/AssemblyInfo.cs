@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
 [assembly: AssemblyTitle("ado")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Ado - Administrator do")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("NASS e.K.")]
 [assembly: AssemblyProduct("ado")]
-[assembly: AssemblyCopyright("Copyright ©  2024")]
+[assembly: AssemblyCopyright("Copyright ©2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
