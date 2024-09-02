@@ -1,3 +1,4 @@
+<pre>
 Ado - Administrator do, ©2024 - Manfred Mueller  
   
 Ausführen eines Prozesses auf der Kommandozeile mit erweiterten Zugriffsrechten über UAC  
@@ -12,3 +13,4 @@ Verwendung: ado [-?|-wait|-k] prog [args]
           entfernt es aus der PATH-Variable des Benutzers.  
 prog    - Das auszuführende Programm  
 [args]  - Optionale Befehlszeilenargumente für prog  
+</pre>
