@@ -98,7 +98,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AdoAdministratorDo2024ManfredMueller" xml:space="preserve">
-    <value>Ado - Administrator do, ©2024 - Manfred Mueller</value>
+    <value>Ado {0} - Administrator do, ©2024 - Manfred Mueller</value>
     <comment>@Invariant</comment>
   </data>
   <data name="ExecuteAProcessOnTheCommandLineElevatedViaUAC" xml:space="preserve">

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -60,11 +61,12 @@ namespace ado
         {
             StringBuilder appNameBuffer = new StringBuilder(260);
             StringBuilder cmdLineBuffer = new StringBuilder(520);
+            String adoVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
             if (args.ShowHelp)
             {
                 Console.WriteLine("\n" +
-                    ado.Properties.Resources.AdoAdministratorDo2024ManfredMueller + "\n\n" +
+                    String.Format(ado.Properties.Resources.AdoAdministratorDo2024ManfredMueller, adoVersion) + "\n\n" +
                     ado.Properties.Resources.ExecuteAProcessOnTheCommandLineElevatedViaUAC + "\n" +
                     ado.Properties.Resources.UsageAdoWaitKProgArgs + "\n" +
                     "-?\t" + ado.Properties.Resources.ShowsThisHelp + "\n" +

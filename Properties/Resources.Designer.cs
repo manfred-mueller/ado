@@ -88,7 +88,7 @@ namespace ado.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Ado - Administrator do, ©2024 - Manfred Mueller ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Ado {0} - Administrator do, ©2024 - Manfred Mueller ähnelt.
         /// </summary>
         internal static string AdoAdministratorDo2024ManfredMueller {
             get {
