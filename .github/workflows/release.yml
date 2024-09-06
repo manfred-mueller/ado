@@ -4,7 +4,10 @@ on:
   push:
     branches:
       - master
+    paths:
+      - 'bin/Release/**'  # Only run the workflow when files in this path are pushed
   workflow_dispatch:
+
 
 env:
   REPO_NAME: ${{ github.event.repository.name }}
